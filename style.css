@@ -1,0 +1,222 @@
+@import url(http://fonts.googleapis.com/css?family=Poppins:400,300,600,700);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: #56baed;
+}
+
+.select-box, .play-board, .result-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.select-box{
+    background-color: white;
+    padding: 20px 25px 25px;
+    border-radius: 5px;
+    max-width: 330px;
+    width: 100%;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.select-box.hide{
+   opacity: 0;
+   pointer-events: none;
+   transform: translate(50%, -50%) scale(0.5);
+}
+
+.select-box header{
+    font-size: 23px;
+    font-weight: 600;
+    bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.select-box .title{
+    font-size: 18px;
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+.select-box .options{
+    display: flex;
+    width: 100%;
+}
+
+.options button{
+    width: 100%;
+    font-size: 18px;
+    padding: 8px 0;
+    border: none;
+    outline: none;
+    background: #56baed;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.options button:hover, .result-box .btn button:hover{
+    transform: scale(0.95);
+}
+
+.options button.playerX{
+    margin-right: 5px;
+}
+
+.options button.playerY{
+    margin-left: 5px;
+}
+
+.play-board{
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(50%, -50%) scale(0.9);
+}
+
+.play-board.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.play-board .details{
+    padding: 7px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    background: #ffff;
+}
+
+.play-board .players{
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+.play-board .details span{
+    width: 100%;
+    color: #56baed;
+    padding: 10px 0;
+    border-radius: 5px;
+    font-size: 19px;
+    font-weight: 500;
+    cursor: default;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    transition: all 0.3s ease-in-out;
+}
+
+.details span:first-child{
+ color: #ffff;
+}
+
+.details .slider{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 50%;
+    background: #56baed;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    z-index: 2;
+}
+
+.players.active span:first-child{
+    color: #56baed;
+}
+
+.players.active span:nth-child(2){
+    color: #fff;
+}
+
+.players.active .slider{
+    left: 50%;
+}
+
+
+.play-area{
+    margin-top: 20px;
+}
+
+.play-area section{
+    display: flex;
+    margin-bottom: 1px;
+}
+
+.play-area section span{
+    display: block;
+    margin: 3px;
+    height: 80px;
+    width: 80px;
+    background: #ffff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    font-size: 40px;
+    text-align: center;
+    line-height: 80px;
+    color: #56baed;
+}
+
+.result-box{
+    background: #ffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    max-width: 350px;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(50%, -50%) scale(0.9);
+}
+
+.result-box.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+.result-box .won-text{
+    font-size: 20px;
+    font-weight: 600;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.result-box .won-text p{
+    font-weight: 600;
+    margin: 0 5px;
+}
+
+.result-box .btn{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.result-box .btn button{
+    font-size: 18px;
+    padding: 8px 20px;
+    border: none;
+    outline: none;
+    background: #56baed;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
